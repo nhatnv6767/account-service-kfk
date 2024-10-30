@@ -9,12 +9,24 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
+/**
+ * The type Account controller.
+ */
 @RestController
 @RequestMapping("/account")
 public class AccountController {
+    /**
+     * The Kafka template.
+     */
     @Autowired
     KafkaTemplate<String, Object> kafkaTemplate;
 
+    /**
+     * Create account dto.
+     *
+     * @param account the account
+     * @return the account dto
+     */
     @PostMapping("/new")
     public AccountDTO create(@RequestBody AccountDTO account) {
         StatisticDTO stat = new StatisticDTO("Account " + account.getEmail() + " is created", new Date());
@@ -32,6 +44,11 @@ public class AccountController {
         return account;
     }
 
+    /**
+     * Test string.
+     *
+     * @return the string
+     */
     @GetMapping("/test")
     public String test() {
         return "Test successful!";
