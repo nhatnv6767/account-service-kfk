@@ -5,10 +5,7 @@ import model.MessageDTO;
 import model.StatisticDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
@@ -27,11 +24,16 @@ public class AccountController {
         messageDTO.setTo(account.getEmail());
         messageDTO.setToName(account.getName());
         messageDTO.setSubject("Welcome to My Page");
-        messageDTO.setContent("How do like that?????");
+        messageDTO.setContent("How do like that??");
 
         kafkaTemplate.send("notification", messageDTO);
         kafkaTemplate.send("statistic", stat);
 
         return account;
+    }
+
+    @GetMapping("/test")
+    public String test() {
+        return "Test successful!";
     }
 }
