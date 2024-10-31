@@ -1,8 +1,9 @@
-package controller;
+package com.dev.btnone.accountservice.controller;
 
-import model.AccountDTO;
-import model.MessageDTO;
-import model.StatisticDTO;
+
+import com.dev.btnone.accountservice.model.MessageDTO;
+import com.dev.btnone.accountservice.model.StatisticDTO;
+import com.dev.btnone.accountservice.model.AccountDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;

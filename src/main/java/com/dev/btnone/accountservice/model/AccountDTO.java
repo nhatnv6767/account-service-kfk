@@ -1,4 +1,4 @@
-package model;
+package com.dev.btnone.accountservice.model;
 
 public class AccountDTO {
     private String name;

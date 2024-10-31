@@ -1,4 +1,4 @@
-package model;
+package com.dev.btnone.accountservice.model;
 
 import java.util.Date;
 
